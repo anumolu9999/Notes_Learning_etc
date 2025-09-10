@@ -1,0 +1,59 @@
+US Health Care System
+
+1. Provider - Hospital/Individual providing service
+2. Payer	  - Insurance company
+3. Beneficiary - Patient
+
+---------------------------------------------
+Health ID Card:
+
+Name
+BeneficiaryID
+Family ID
+Coverage for
+Medical - Vision - Dental - Rx(Pharmacy)
+Copay/Deductible/CoInsurance information for PCP/Specialist/ER/UrgentCare
+INN(In Network)/OON (Out of Network) rates for Copay/Deductible/CoInsurance
+
+RxBIN/RxPCN/RxGrp - 
+Sometimes the medical insurance company does not cover prescriptions but prints the information of the prescription insurance company that does cover it on the same card.
+
+Regardless of the insurance company, the pharmacy is looking for four pieces of necessary information.
+RxBin - the Bank Identification Number routes a claim towards the right insurance
+RxPCN - the Processor Control Number further narrows the claim to the specific insurance
+ID - the member's designated identification number
+RxGrp - the prescription group number denotes which group plan the member ID falls under
+
+---------------------------------------------
+
+
+---------------------------------------------
+
+
+
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------
+
+---------------------------------------------

@@ -1,0 +1,113 @@
+SCRUM PRINCIPLES
+
+1. Empirical Process Control (emphasizes on core philosophy of scrum - Transparency/Inspection/Adaption)
+2. Self - Organization (Focuses on today's workers - self organize other than working under command and control)
+3. Collaboration (Awareness/articulation/appropriation - advocates project management as a shared value creation process)
+4. Value-Based Prioritization (Max Buisness value from project starting and throughout project)
+5. Time-Boxing (sprints/Daily standup/sprint Planning meeting/sprint review meetings)
+6. Iterative Development (emphasizes on better management of changes to satisfy customer needs)
+
+
+SCRUM ASPECTS
+
+1. Organization
+	Defining Roles and Responsibilities
+	Roles - Core Roles/Non Core Roles
+	Core Roles - Involved in product/service
+				core roles individuals are fully commited to project
+				reponsible for success of each project or iteration
+				Product Owner/Scrum Master/Scrum Team
+		Buisness stake holder (Customer who provide buisness requirements to ProductOwner
+		Product Owner - reponsible for 
+							achieving max buisness value
+							Articulates customer requirements
+							maintains buisnesss justification for project
+							represents voice of customer
+		Scrum Master - Reponsible for
+		(facilitator)		team has appropriate environment
+							guides/facilitates/teaches scrum practices
+							clears impediments/roadblocks for the team
+							ensures the scrum processes are being followed
+		Scrum Team - Group or team reponsible for
+							understanding product owner specific requirements
+							create project deliverables
+	Non - Core Roles (Optional) - May include all team members who are interested in project
+						No formal roles but may interface with team
+						not be responsible for succes of project
+						
+						
+2. Buisness justification (Product Owner is primarily responsible for BJ)
+	Important to perform buisness assessment before start of project
+	this understands/helps for key decision makers to understand the buisness need for change, new project/service
+	Value-Driven Delivery
+	Uncertainity of results/outcomes
+	impossible to gurantee project's success or completion
+	scrum gives delivering results as early as possible 
+	This provides an opportunity for reinvestment
+	Allows project's objectives/processes to change in case of buisness justification changes
+
+3. Quality
+	Ability of completed product to meet the acceptance criteria and achieve the buisness value expected by customer
+	
+4. Change
+	orgnizations try to maximize the benefits that arise from change and minimize any negative impacts
+	scrum Acknowledges
+		Requirements churn
+		welcomes changes by using short iterative sprints
+			
+5. Risk
+	An uncertain event or set of events that can affect the objectives of a project and may contribute to its success or failure
+	
+
+
+SCRUM PROCESSES
+	Address the specific activities and flow of scrum project. 
+	Total, there are 19 processes which are grouped into 5 phases
+
+    5 Phases (Each phase has Inputs, Outputsm, Tools)
+
+Phase 1: Initiate	
+1. Create Project Vision - Product owner identified
+2. Identify Scrum Master and Buisness Stakeholder(s)
+3. Form Scrum Team - team members are identified
+4. Develop EPIC(s)/Credibility - Large and high level requirements
+			Epic(s) are divided into Feature(s) - 
+			Feature - User stories
+5. Create a prioritized product backlog
+			Epic(s) are eloborated
+6. Conduct Release Planning
+
+Phase 2: Plan and Estimate
+7. Create User Stories - product owner
+8. Estimate User stories - Scrum team supported by scrum master
+9. Commit User stories - team commits to deliver Product owner approved user stories for a sprint
+10. Identify Tasks - commited user stories broken into tasks list
+11. Estimate Tasks - optional process (team estimates the tasks)
+12. Update Sprint Backlog - team updates the sprint backlog with further details about the tasks as part of sprint planning meeting/sprint
+
+Phase 3: Implement
+13. Create deliverables - Team works on the tasks in the sprint backlog to create sprint deliverables
+14. Conduct Daily Standup - highly focused, timeboxed meeting. update progress and impediments (Roadblocks)
+15. Refine Prioritized Product Backlog - PPBL is continously updated and maintained. PPBL Review meeting may held. Changes or updates to the backlog are discussed and incorported to PPBL
+
+Phase 4: Review and Retrospect
+16. Demostrate and Validate Sprint - Team demonstrate sprint deliverables to PO or SH
+17. Retrospect Sprint - meet to discuss the lessons learnt. May be agreed actionable improvements or updated scrum guidance
+
+Phase 5: Release
+18. Ship Deliverables - Accepted UserStories or previously completed sprints are delivered
+19. Retrospect Release - Buisness Stakeholder and scrum core team members assemble to retrospect
+							Identify,document and internalize the lessons learnt
+							These will be help to make agreed actionable improvements to implement in future projects
+
+Scrum Ceremonies/meetings
+	Project Vision Meeting - 	project vision statement created
+	User group meeing 	   -	Develop epics and create UserStories
+	Release planning sessions - create release planning schedule
+	Product backlog review meeting -
+	Sprint planning meeting 8hrs for 1month sprint (two parts 1.objective definition 2.Task Estimation(identify tasks and estimate tasks)
+	Sprint review meeting 4hrs for 1month sprint (accepts/rejects completed user stories)
+	Retrospect Sprint Meeting 4hrs for 1month sprint 
+	Retrospect Release Meeting
+	Daily standup - 15 mins(what is done from last standup, what to do before next meeting, any roadblocks)
+	sprint - 1-4weeks(recommended 4weeks, extended to 6weeks for stable requirements)
