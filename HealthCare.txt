@@ -25,8 +25,17 @@ ID - the member's designated identification number
 RxGrp - the prescription group number denotes which group plan the member ID falls under
 
 ---------------------------------------------
-
-
+Claim Lifecycle - End to End Claim Flow
+Patien Registration - Register for service/Book appointment for visit or treatment
+Eligibility Verification - member verfied through EDI 270 request by validating EDI 271 response
+Service Provision - Services will be rendered for patient
+Charge Capture - capture quantity and charge for the diagnosis(tests) and treatment(surgery/care)
+Coding
+        For services like diagnosis and related tests (ICD10)
+                    like treatment and related sugeries (CPT/HCPCS)
+CMS1500 (papaerclaim) - EDI 837P Both for professional claim
+UB04 (papaerclaim) - EDI 837I for Institutional claim
+        
 ---------------------------------------------
 
 
