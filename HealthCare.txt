@@ -1,16 +1,39 @@
 US Health Care System
---------------------------------------------- 1&2
+--------------------------------------------- 1 & 2
 1. Provider - Hospital/Individual providing service
-2. Payer	  - Insurance company
-3. Beneficiary - Patient
+                Physicians/Ambulatory Surgical Centers/Skilled nursing facilities/Home Health Agencies/Pharmacies
+2. Payer - Insurance companies
+                Private/Government/Self-insured employers/Thrid party Administrators
+3. Beneficiary - Patients/consumers
 
-Health Care Models
-HMO
-PPO
-EPO
+4. Suppliers - Pharameutical Companies/Medical device manufacturers/Health IT Vendors
+5. Regulators and Policy makers
+        Federal Agencies/ CMS, FDA, HHS
+        State Agencies/ State health Dept, Insurance Commissioners
+        Accreditation Orgranizantions/ Joint Commision, National Committee for Quality Assurance (NCQA)
 
+Cost Sharing Elements
+1. Deductible
+2. Copayment
+3. CoInsurance
+4. Out of Pocket Maximum
 
---------------------------------------------- 1&2
+Health Plan Models
+HMO - Health Maintenance Orgranizantions
+PPO - Preferred Provider Organization
+EPO - Exclusive Provider Orgranizantion
+POS - Point Of Service
+
+Government Players
+        Medicare - Federal program for 65 or older, certain younger people with disabilites
+        Medicaid - Federal and state programing to cover low income group
+        CHIP (Children's Health Insurance Program)
+        VAH (Veterans Health Administration)
+        TRICARE (Healthcare program for uniformed service members/retirees&their families)
+
+Private Players
+
+--------------------------------------------- 1 & 2
 Health ID Card:
 
 Name
@@ -103,8 +126,7 @@ Appeals (if Required)
 
 Resolution
         if any appeals - Valid appeals > Processed and Paid, Invalid>rejected
-
-      
+   
         
 Clean Claim rates- No of claims submitted without any errors/total claims
 First Pass Resolution Rate - 
@@ -118,6 +140,12 @@ Modifiers
 
 
 
+
+---------------------------------------------
+Key Acronyms:
+
+CMS - Center for Medicare And Medicaid Services
+ACA - Affordable Care Act
 ICD10 - International Classification of Diseases(10th Revision)
 CPT - Current Procedural Terminology
 EHR - Electronic Health Record
@@ -125,10 +153,12 @@ SSBCI - Special Supplemental Benefits for Cronically Ill
 FFS - Fee For Services
 VBC - Value Based Care (Quality based services)
 ERA/RA - Electronic Remittance Advice EDI835
+COB - Coordination of Benefits
 EOB - Explanation of Benefits
 WEDI - Woking group of EDI
 EPA - Electronic Prior Authorization
 EDI - Electronic Data Interchange (X12 format)
+PMPM - Per Member Per Month
 ---------------------------------------------
 
 
