@@ -1,10 +1,16 @@
 US Health Care System
-
+--------------------------------------------- 1&2
 1. Provider - Hospital/Individual providing service
 2. Payer	  - Insurance company
 3. Beneficiary - Patient
 
----------------------------------------------
+Health Care Models
+HMO
+PPO
+EPO
+
+
+--------------------------------------------- 1&2
 Health ID Card:
 
 Name
@@ -24,18 +30,105 @@ RxPCN - the Processor Control Number further narrows the claim to the specific i
 ID - the member's designated identification number
 RxGrp - the prescription group number denotes which group plan the member ID falls under
 
----------------------------------------------
+--------------------------------------------- 4
 Claim Lifecycle - End to End Claim Flow
-Patien Registration - Register for service/Book appointment for visit or treatment
-Eligibility Verification - member verfied through EDI 270 request by validating EDI 271 response
-Service Provision - Services will be rendered for patient
-Charge Capture - capture quantity and charge for the diagnosis(tests) and treatment(surgery/care)
+
+Patien Registration 
+        - Register for service/Book appointment for visit or treatment
+Eligibility Verification 
+        - member verfied through EDI 270 request by validating EDI 271 response
+Service Provision 
+        - Services will be rendered for patient
+Charge Capture 
+        - capture quantity and charge for the diagnosis(tests) and treatment(surgery/care)
 Coding
-        For services like diagnosis and related tests (ICD10)
-                    like treatment and related sugeries (CPT/HCPCS)
-CMS1500 (papaerclaim) - EDI 837P Both for professional claim
-UB04 (papaerclaim) - EDI 837I for Institutional claim
+        -       For diagnosis like related tests (ICD10)
+                for treatment like sugeries (CPT/HCPCS)
+        Provider side
+                HL7.V2 - Lab ordering made by provider is done by HL7.V2
+                Snowmed
+                Loinc
+                Dicom
+        But Payer require only ICD10/CPT-HCPCS codes
+
+Claim Creation: 
+        Patient Info| 
+                if dependent then Subscriber Info also)
+        Provider Info |
+                (Individual FN,LN,NPI1,Taxonomy/Entity FN,NPI2,)
+                Provider can have multiple taxonomy - They can submit primary taxonomy
+                if cardiac surgery is done they have to submit the respective taxonomy
+        Clinical Info|
+                ICD10
+                CPT/HCPCS
+        Financial Info| 
+                - Qty Charge
+
+Claim Submission:
+        CMS1500 -HCFA(paperclaims) - EDI 837P  for professional claim -Clinical (ICD10+CPT/HCPCS)
+                                        837P asks for Billing provider/Rendering provider/attending provider
+        UB04 -CMS1450(paperclaims) - EDI 837I for Institutional/facility claim - Institutional (ICD10+Revendue Codes)
+        ADA claim form             - EDI 837D for Dental claim
+
+Clearing House Processing: Any conversions(paper to EDI), errors, corrections will be reviewed  
+        JMS (Just Make sense -one of the clearing house to convert paper to EDI)
+        Availity, Smart Data Solutions, DentalXChange, FinThrive, PNT Data, HFMI
+
+Payer System: Receive Claim in Administrative System(Facets/QNXT/HealthRule Payer)
+                /Verify Eligibility and benefit level
+                /Apply Pricing Claim Edits
+                        Basic Edits and Detailed Edits  based on
+                                - contracted max allowed
+                                - propretary claim edits (insurer specific/repricing/codes claims are eligible for payment or not)
+
+Adjudication
+        Adjust the claims based on the edits and eligibility
+
+Determination
+        Determines final payment for the claim after edits. Added to 'To be paid' and to payment system
+
+Payment/Denial
+        claim deneied for in-eligible codes
+        payment will be processed for elibiles
+
+Provider Posting
+        Payer sends the EOB/RA to provider and patient. 
+                Details about the amount paid for the eligible services
+                in-eligible list which got rejected
+Patient Billing
+        if any amount not paid by payer for in-eligible codes, will be billed to patient
+
+Appeals (if Required)
+        if any eligibles are rejected, can be appealed
+
+Resolution
+        if any appeals - Valid appeals > Processed and Paid, Invalid>rejected
+
+      
         
+Clean Claim rates- No of claims submitted without any errors/total claims
+First Pass Resolution Rate - 
+Cost Per Claim
+
+Modifiers
+        Modifier 26: Indicates a professional service component. 
+        Modifier 50: Used for a bilateral procedure. 
+        Modifier 52: Indicates a reduced service. 
+        Modifier 24: Used with an E&M (Evaluation and Management) code to show an unrelated service during a post-operative period
+
+
+
+ICD10 - International Classification of Diseases(10th Revision)
+CPT - Current Procedural Terminology
+EHR - Electronic Health Record
+SSBCI - Special Supplemental Benefits for Cronically Ill
+FFS - Fee For Services
+VBC - Value Based Care (Quality based services)
+ERA/RA - Electronic Remittance Advice EDI835
+EOB - Explanation of Benefits
+WEDI - Woking group of EDI
+EPA - Electronic Prior Authorization
+EDI - Electronic Data Interchange (X12 format)
 ---------------------------------------------
 
 
