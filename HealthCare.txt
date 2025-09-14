@@ -152,6 +152,7 @@ Clearing Houses:
   Additional Services
     Eligibility Verfification (EDI270/271 transactions)
     Claim Status inquiries (EDI276/277 transactions)
+    Claim Status Ackowlegement (277CA)
     ERA (EDI835)
     EDI278 / EPA(FHIR) processing
 
@@ -167,7 +168,7 @@ Claims Adjudication Process
           MS DRG (Medicare Severity) - Serverity Level 3 (None, CC, MCC)
           AP DRG (All Patient)  - Severity Level None
           APR DRG (All Patient Refined) Severity Level 4 (Minor to Extreme)
-        ASC - Ambulatory Surgery Center
+        ASC - Ambulatory Surgery Center(OPPS)
         RBRVS (Resource Based Relative Value Scale)
       Value Based Payments (Quality)
         Pay for Performance Models
@@ -187,6 +188,14 @@ Claims Adjudication Process
   Per Diem - Fixed Daily rate for inpatient care
   Percentage of Charges - Payer pays % of hospital's billed charges
   Case Rates - Fixed payment for entire episode of care
+
+RVU's
+In healthcare, Relative Value Units (RVUs) are not a single formula but a scaled value assigned to each medical service, calculated as the 
+sum of three components: 
+    Work RVUs, 
+    Practice Expense (PE) RVUs, and 
+    Malpractice (MP) RVUs. 
+The total RVU for a service is then multiplied by a Conversion Factor to determine the payment for that service.  
 
 adendumA -Revenue Codes
 AdendumB CPT/HCPCS Codes
@@ -248,3 +257,4 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
