@@ -185,6 +185,7 @@ Claims Adjudication Process
     Fee Schedules
     Factors Affecting Pricing
 
+Reimbursement Methods (to pay providers for service/care)
   Per Diem - Fixed Daily rate for inpatient care
   Percentage of Charges - Payer pays % of hospital's billed charges
   Case Rates - Fixed payment for entire episode of care
@@ -204,6 +205,28 @@ NPI CMS
 
 --------------------------------------------- 6
 Claims & Encounters
+
+COB (Coordination Of Benefits)
+    comes into picture when paties has multiple insurance plans
+    COB determines which helath insurance plan pays first (primacy)
+    Secondary plan may pay remaining eligible costs
+  
+    PRIMACY:::will tell about which is Primary HIP, which is Secondary HIP or tertiary HIP
+
+EOB           - EOP
+Explanation of - Explanation of Payment
+Benefits
+to Member    -  to Provider
+No payment   - Yes payment related info (ERA)
+
+CO - Contractual Obligation
+Denials and Appeals
+CO:16 - claims lacks info for adjudication
+CO:50 - non covered services
+CO:96 - Non covered charge
+CO:18 - Duplicate Claim
+
+42:23
 
 --------------------------------------------- 7
 CPT & HCPCS
