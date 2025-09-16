@@ -226,8 +226,27 @@ CO:50 - non covered services
 CO:96 - Non covered charge
 CO:18 - Duplicate Claim
 
-42:23
+Encounters : EDI837 but without charges info
+             Mostly mandatory for MCO's (managed care organizations), state agency (eg: Medicaid)
+  difference between claim837 vs encounter837 is at BHT segment at BHT06(6th element)
+   claim BHT06 is CH:    encounter BHT06 is RP 
+   encounters are for VBC (Value Based Care)
 
+Medical Coding: CAC (Computer Aided Coding)
+      CAC tools
+      3M - 3M 360 encompass
+      Cerner - Cerner Coding
+      Dolbey - Fusion CAC
+      ezDI - ezCAC
+      M*Modal - Flency for coding
+      TruCode - TruCode Encoder Essentials
+
+ICD-10 created by CMS and NCHS ((National Center for Health Statistics)
+ICD-10 divided/consist of two medical code sets
+1. Clinical Modification (ICD-10-CM) - Across all claims (Prof/inst IP/OP)
+          Standardised classification system of diagnosis codes that represent conditions and           disease, related health problems, abnoramal findings, signs and symptoms, injuries,            external causes of injuries and diseases, and social circumstances
+2. Procedure Coding System (ICD-10-PCS)
+          Classification system of medical codes used in hospital settings to report          inpatient procedures
 --------------------------------------------- 7
 CPT & HCPCS
 
@@ -258,15 +277,16 @@ EDI 837 Transaction
 ---------------------------------------------
 Key Acronyms:
 
-
-
+Taxonomy - Specialization code
+DME - Durable Medical Equipment (equipment specific codes)
 OPPS - Out Patient Prospective Payment System
 IPPS - In Patient Prospective Payment System
 TIN - Tax Indentification Number (9 char length)
 CMS - Center for Medicare And Medicaid Services
 ACA - Affordable Care Act
-ICD10 - International Classification of Diseases(10th Revision)
-CPT - Current Procedural Terminology
+ICD10 - International Classification of Diseases(10th Revision) Alphanumeric
+CPT - Current Procedural Terminology (Numeric codes)
+HCPCS - Healthcare Common Procedure Coding System (Alphanumeric)
 EHR - Electronic Health Record
 SSBCI - Special Supplemental Benefits for Cronically Ill
 FFS - Fee For Services
@@ -280,4 +300,5 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
