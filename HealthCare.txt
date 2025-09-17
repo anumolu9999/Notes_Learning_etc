@@ -354,9 +354,35 @@ Trading Partner Onboarding
 	HTTPS - Secure HTTP
 	Value Added Network (VAN)
 
+SNIP LEVEL VALIDATION (snip - Strictly Necessary Information Protocol)
+	Suggested by WEDI 
+	will do pre submission checks
+		X12 syntax rules
+		HIPAA requirements
+		Payer-specific edits
+
+	7 Type Snip Leve Testing
+	1. X12 Syntax
+	2. Required Data Elements (HIPAA rules)
+	3. Balancing Values
+	4. Situational Requirements
+	5. External Code Sets
+	6. Inter-segment Consistency
+	7. Payer-Specific Rules
+
+Availity Essentials
+Conduent - 7 level snip testing
+EDIFECS tools
+	spec builder - snip validations
+	XE Engine convert x12 to csv/json/xml
+	TPM - Trading partner onboarding and management
+
+Inbound 
+Outbound
+for each transaction for payer and provider and/or CH
 
 
----------------------------------------------9
+-----------------------------------------------------------------------9
 EDI 837 Transactions (5010 is current version)
 					4010 is legacy
 					7030/8020 is future versions
@@ -411,6 +437,7 @@ EDI 837 Transactions (5010 is current version)
 ---------------------------------------------
 Key Acronyms:
 
+CAQH - Council for Affordable Quality Healthcare
 Taxonomy - Specialization code
 DME - Durable Medical Equipment (equipment specific codes)
 OPPS - Out Patient Prospective Payment System
@@ -434,6 +461,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
