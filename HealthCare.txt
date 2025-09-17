@@ -165,9 +165,9 @@ Claims Adjudication Process
       Quantity Payment systems
         APCs - Ambulaory Payment Classifications (OPPS)
         DRG - Diagnosis Related Group - classified based on criticality (IPPS)
-          MS DRG (Medicare Severity) - Serverity Level 3 (None, CC, MCC)
+          MS DRG (Medicare Severity) - 3 Serverity Levels (None, CC, MCC)
           AP DRG (All Patient)  - Severity Level None
-          APR DRG (All Patient Refined) Severity Level 4 (Minor to Extreme)
+          APR DRG (All Patient Refined) 4 Severity Level (Minor, Moderate, Major, Extreme)
         ASC - Ambulatory Surgery Center(OPPS)
         RBRVS (Resource Based Relative Value Scale)
       Value Based Payments (Quality)
@@ -249,7 +249,60 @@ ICD-10 divided/consist of two medical code sets
           Classification system of medical codes used in hospital settings to report          inpatient procedures
 --------------------------------------------- 7
 CPT & HCPCS
+	CPT (Level 1 codes): Current Procedural Terminology
+		Introduced by AMA in 1966
+		
+		Category 1: Standard Codes (5 Digits)
+			Used for most commonly performed procedures		
+			divided into below six sections
+				Evaluation and management 99201-99499
+				Anesthesia 	00100-01999, 99100-99140
+				Surgery - 10021-69990
+				Radiology - 70010-79999
+				Pathology and Laboratory - 80047-89398
+				Medicine - 90281-99607
+		
+		Category 2: Performance Measurement (4 digits and followed by F)
+			Quality reporting initiatives (VBC)
+			Optional tracking codes for performance measures
+		
+		Category 3: Emerging Technology (4digits and followed by T)
+			Temporary alphanumeric codes for new and developing tech, procedures/services	
+			Typically used for procedures not yet widely performed
+	
+	HCPCS (Level II Codes): Healthcare Common Procedure Coding system
+		Introduced for the procedures/supplies/services not covered in CPT	
+		Introduced by CMS in 1980
+			A Codes - Transportation, supplies, etc
+			B Codes - Enteral and parenteral therapy
+			E Codes - Durable Medical Equipment (DME)
+			J Codes - Drugs (injections, infusions)
+			L Codes - Orthotics and prosthetics
+	
+	Modifiers: Two character codes (numeric or alphanumeric) appended to CPT or HCPCS
+		Provide additional details
+		clarify circumstances
+		Avoid denial or incorrect payment
+		Ensure accurate reimbursement
+		
+	CPT Modifiers: Two digit number maintained by AMA
+		50 Bilateral procedure
+		53 discontinued procedure
+		....
 
+	HCPCS Modifiers: Two char number maintained by CMS
+		RT Right side
+		LT Left side
+		FA, F1-F9 - Fingers (left thumb through little finger)
+		TA, T1-T9 - Toes (left great toe through little toe)
+		E1-E4 - Eyelid (upper left to Lower right)
+	
+	
+	DRG Classification System
+		MS DRG - 750 DRGs. CMS is the developer, used for medicare
+		APR DRG - 1300 DRGs. 3M is the develope, used across all private/public insurers
+		
+		
 --------------------------------------------- 8
 Trading Partner Onboarding
 
@@ -300,5 +353,4 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
-
 
