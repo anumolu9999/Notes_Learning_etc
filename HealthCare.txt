@@ -339,7 +339,23 @@ EDI Transactions
 
 --------------------------------------------- 8
 Trading Partner Onboarding
-	
+	with whom you trade data using electronic communication
+	Will use various protocols to transmitting data
+	SFTP - SSH File Transfer Protocol
+	FTPS - File Transfer Protocol Secure
+		Protocol: FTP, FTPS, SFTP
+		Host: Server URL/address
+		Port Number
+		password or key passphrase
+		Root directory
+		Directory to retrieve files
+
+	AS2 - Applicability Statement 2
+	HTTPS - Secure HTTP
+	Value Added Network (VAN)
+
+
+
 ---------------------------------------------9
 EDI 837 Transactions (5010 is current version)
 					4010 is legacy
@@ -418,6 +434,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
