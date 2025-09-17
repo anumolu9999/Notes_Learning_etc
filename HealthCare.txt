@@ -132,11 +132,7 @@ Clean Claim rates- No of claims submitted without any errors/total claims
 First Pass Resolution Rate - 
 Cost Per Claim
 
-Modifiers
-        Modifier 26: Indicates a professional service component. 
-        Modifier 50: Used for a bilateral procedure. 
-        Modifier 52: Indicates a reduced service. 
-        Modifier 24: Used with an E&M (Evaluation and Management) code to show an unrelated service during a post-operative period
+
 
 --------------------------------------------- 5
 Clearing Houses: 
@@ -286,10 +282,12 @@ CPT & HCPCS
 		Ensure accurate reimbursement
 		
 	CPT Modifiers: Two digit number maintained by AMA
-		50 Bilateral procedure
 		53 discontinued procedure
-		....
-
+        26: Indicates a professional service component. 
+        50: Used for a bilateral procedure. 
+        52: Indicates a reduced service. 
+        24: Used with an E&M (Evaluation and Management) code to show an unrelated service during a post-operative period
+		
 	HCPCS Modifiers: Two char number maintained by CMS
 		RT Right side
 		LT Left side
