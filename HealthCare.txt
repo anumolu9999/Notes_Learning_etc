@@ -302,7 +302,7 @@ CPT & HCPCS
 		
 EDI Transactions
 270/271 - Verify patient eligibility/benefits AND response
-275 - Exchange Patient Information
+275 - Exchange Patient Information or Attachments
 276/277 - Claim Status request/response
 277CA - Claim Ackowledgement
 278 - Inquiring/Verifying Prior Authorization
@@ -362,5 +362,6 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
