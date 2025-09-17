@@ -354,9 +354,12 @@ Trading Partner Onboarding
 	HTTPS - Secure HTTP
 	Value Added Network (VAN)
 
+WEDI
 SNIP LEVEL VALIDATION (snip - Strictly Necessary Information Protocol)
-	Suggested by WEDI 
-	will do pre submission checks
+	Validation levels for EDI file integrity
+	Governed by WEDI enforced by Payers/CHs/Software Vendors
+	
+	SNIP will do pre submission checks such as
 		X12 syntax rules
 		HIPAA requirements
 		Payer-specific edits
@@ -381,6 +384,8 @@ Inbound
 Outbound
 for each transaction for payer and provider and/or CH
 
+CAQH CORE: Governed by CAQH enforced by CMS
+ Operating rules for EDI interoperability
 
 -----------------------------------------------------------------------9
 EDI 837 Transactions (5010 is current version)
@@ -461,6 +466,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
