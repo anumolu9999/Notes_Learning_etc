@@ -240,11 +240,36 @@ Medical Coding: CAC (Computer Aided Coding)
 ICD-10 created by CMS and NCHS ((National Center for Health Statistics)
 ICD-10 divided/consist of two medical code sets
 1. Clinical Modification (ICD-10-CM) - Across all claims (Prof/inst IP/OP)
-          Standardised classification system of diagnosis codes that represent conditions and           disease, related health problems, abnoramal findings, signs and symptoms, injuries,            external causes of injuries and diseases, and social circumstances
-2. Procedure Coding System (ICD-10-PCS)
-          Classification system of medical codes used in hospital settings to report          inpatient procedures
+          Standardised classification system of diagnosis codes that represent conditions and disease, related health problems, abnoramal findings, signs and symptoms, injuries, external causes of injuries and diseases, and social circumstances
+2. Procedure Coding System (ICD-10-PCS) (InPatient Procedures)
+          Classification system of medical codes used in hospital settings to report inpatient procedures
+
+Claims Pricing Context
+	Scenario
+Inpatient Hosp Claim - ICD10CM(Diagnosis)->ICD10 PCS (procedures inpatient) -> DRG -> Reimbursement
+Outpatient/Prof claim - ICD10CM(diagnosis) -> CPT/HCPCS (op procedures) -> Fee Schedule
+
+ICD-10-CM : S32.010 A (had period after 3rd char)
+	3-7 characters - alphanumeric
+	1st Char - A-Z except U (represents category - chapter or disease group)
+	2nd/3rd char - 00-99 (represents category - disease or condition group)
+	4th char - Number or alpha (represents Etiology)
+	5th char - Number or alpha (represents Anatomic site)
+	6th char - Number or alpha (represents Severity)
+	7th char - Number or alpha (represents extension/Obstetrics, injuries and external cause of injury)
+	(optional)			often represents Episode of care
+
+ICD-10-PCS: 7 Digit code alphanumeric
+	1st Char - represents section
+	2nd char - Body System
+	3rd char - Root operation
+	4th char - Body Part
+	5th char - Approach
+	6th char - Device
+	7th char - Qualifier
+
 --------------------------------------------- 7
-CPT & HCPCS
+CPT & HCPCS (Outpatient procedures)
 	CPT (Level 1 codes): Current Procedural Terminology
 		Introduced by AMA in 1966
 		
@@ -362,6 +387,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
