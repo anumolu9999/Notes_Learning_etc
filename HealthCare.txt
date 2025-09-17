@@ -300,7 +300,18 @@ CPT & HCPCS
 		MS DRG - 750 DRGs. CMS is the developer, used for medicare
 		APR DRG - 1300 DRGs. 3M is the develope, used across all private/public insurers
 		
-		
+EDI Transactions
+270/271 - Verify patient eligibility/benefits AND response
+275 - Exchange Patient Information
+276/277 - Claim Status request/response
+277CA - Claim Ackowledgement
+278 - Inquiring/Verifying Prior Authorization
+820 - Managing Payment/Remittance
+834 - Managing Benefit Enrollment/Maintenance
+835 - Enabling Remittance Advice
+837 - Claim Submission
+999/997/TA1 - Acknowledgement/Confirmation
+
 --------------------------------------------- 8
 Trading Partner Onboarding
 
@@ -351,4 +362,5 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
