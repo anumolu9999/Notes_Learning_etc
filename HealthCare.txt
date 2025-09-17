@@ -339,9 +339,40 @@ EDI Transactions
 
 --------------------------------------------- 8
 Trading Partner Onboarding
-
+	
 ---------------------------------------------9
-EDI 837 Transaction
+EDI 837 Transactions (5010 is current version)
+					4010 is legacy
+					7030/8020 is future versions
+					
+	ISA - Interchange Control Header
+		GS - Functional Group Header
+			ST - Transaction Set Header
+			SE
+			
+			ST
+			SE
+			
+			ST
+			SE - Transaction Set Trailer
+		GE - Functional Group Trailer
+	IEA - Interchange Control Trailer
+	
+	837P - 005010X222A1 (5010 version, X22 - ANSI X12 standard, 2A1 is for professional)
+	837I - 005010X223A2 (3A2 - Institutional)
+	837D - 005010X224A2 (4A2 - Dental)
+	837 COB
+	270/271 - 005010x279A1
+	276/277 - 005010X212
+	278		- 005010x217
+	835		- 005010x221A1
+	834		- 005010x220A1
+	999		- 005010x231A1
+	
+ 5010 - supports ICD10 diagnosis and procedure codes
+		upto 12 diagnosis codes per claim
+		Enhanced provider information
+		additional clinical data elements
 
 ---------------------------------------------
 
@@ -387,6 +418,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
