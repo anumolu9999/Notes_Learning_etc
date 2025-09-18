@@ -90,7 +90,7 @@ Claim Creation:
 Claim Submission:
         CMS1500 -HCFA(paperclaims) - EDI 837P  for professional claim -Clinical (ICD10+CPT/HCPCS)
                                         837P asks for any of these Billing provider/Rendering provider/attending provider
-        UB04 -CMS1450(paperclaims) - EDI 837I for Institutional/facility claim - Institutional (ICD10+Revendue Codes)
+        UB04 -CMS1450(paperclaims) - EDI 837I for Institutional/facility claim - Institutional (ICD10+Revenue Codes)
         ADA claim form             - EDI 837D for Dental claim
 
 Clearing House Processing: Any conversions(paper to EDI), errors, corrections will be reviewed  
@@ -466,6 +466,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
