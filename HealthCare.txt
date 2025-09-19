@@ -421,6 +421,25 @@ EDI 837 Transactions (5010 is current version)
 		Enhanced provider information
 		additional clinical data elements
 
+837P Claim EDI Structure
+Submitter loop 1000A
+Receiver loop  1000B 
+Billing Provider loop 2000A - 2010A - 2010AA
+Pay to Address loop (Situational) 2000A - 2010A - 2010AB
+Pay to Plan Name loop (Situational) 2000A - 2010A - 2010AC
+Subscriber Loop 2000B -2010B - 2010BA
+	SBR segment
+	Patient segment (Situational if subscriber is patient)
+	NM1 01 - IL
+	DMG segment includes dob, Gender, etc
+Patient loop 2000c - 2010C - 2010CA
+	NM1 01 - QC
+
+Claim looop 2300 - 2310
+
+Service line 2400 - has lx1, SV1....
+
+
 ---------------------------------------------
 
 ---------------------------------------------
@@ -466,6 +485,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
