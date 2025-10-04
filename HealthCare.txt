@@ -472,9 +472,25 @@ Submitter loop 1000A---------------------------
 Receiver loop  1000B ---------------------------
 Billing Provider loop 2000A ---------------------------
 	Billing provider- 2010A - 
-		Billing provider details 2010AA 
-		Pay to Address loop (Situational) 2010AB 
-		Pay to Plan Name loop (Situational) 2010AC 
+			HL - hierarchy level billing provider
+			PRV segment - 
+				PRV01 - Provider code - BI (billing)
+				PRV02 - Helathcare provider taxonomy (PXC)
+				PRV03 - Taxonomy code
+			CUR segment - Foriegn currency information
+		Billing provider details 2010AA
+			NM1
+				NM1 01 - Bill'g provider qualifier 85
+				NM1 02 - Entity Qualifier (1/2 i.e., NPI1/NPI2)
+				NM1 03 - Lastname/org name
+				NM1 04 - First Name'
+				NM1 08 - Identification code qualifier 
+				NM1 09 - NPI number
+			N3/N4
+			REF*EI*TIN
+	
+		Pay to Address loop (Situational) 2010AB  - NM1 01 - 87 (qualifier code)
+		Pay to Plan Name loop (Situational) 2010AC - NM1 01 - PE (qualifier code)
 Subscriber Loop 2000B  ---------------------------
 	SBR segment 2010B
 		SBR01- Payer resp seq no code (P- Primary/S Secondary/T Tertiary)
@@ -525,10 +541,10 @@ Claim looop 2300 - 2310 ---------------------------
 					HI02-12 - composite element - other diagnosis code (ABF:diagcode)
 			HCP - Claim Pricing/repricing
 			NTE - claim note segment
-	2310A - Referring provider name
-	2310B - Rendering provider name
-	2310C - Service Facility Location Name
-	2310D- Supervising Provider name
+	2310A - Referring provider name - NM1 01 - DN (ref provider)/P3 (PCP) (qualifier code)
+	2310B - Rendering provider name - NM1 01 - 82 (qualifier code)
+	2310C - Service Facility Location Name - NM1 01 - 77 (qualifier code)
+	2310D- Supervising Provider name - NM1 01 - DQ (qualifier code)
 	2310E/F - Ambulance Pickup/Dropoff location
 	2320 - other Subscriber Information
 
@@ -609,6 +625,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
