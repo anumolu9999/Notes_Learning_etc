@@ -1,5 +1,5 @@
 US Health Care System
---------------------------------------------- 1 & 2
+--------------------------------------------- 1 & 2 ###########################
 1. Provider - Hospital/Individual providing service
                 Physicians/Ambulatory Surgical Centers/Skilled nursing facilities/Home Health Agencies/Pharmacies
 2. Payer - Insurance companies
@@ -33,7 +33,7 @@ Government Players
 
 Private Players
 
---------------------------------------------- 1 & 2
+--------------------------------------------- 1 & 2 ###########################
 Health ID Card:
 
 Name
@@ -54,7 +54,7 @@ ID - the member's designated identification number
 RxGrp - the prescription group number denotes which group plan the member ID falls under
 
 
---------------------------------------------- 3
+--------------------------------------------- 3 ###########################
 Project Management - Agile/Scrum
 Principles
 1. Empirical Process Control (emphasizes on core philosophy of scrum - Transparency/Inspection/Adaption)
@@ -92,7 +92,7 @@ Scrum Ceremonies/meetings
 	sprint - 1-4weeks(recommended 4weeks, extended to 6weeks for stable requirements)
 
 
---------------------------------------------- 4
+--------------------------------------------- 4 ###########################
 Claim Lifecycle - End to End Claim Flow
 
 Patien Registration 
@@ -173,7 +173,7 @@ Cost Per Claim
 
 
 
---------------------------------------------- 5
+--------------------------------------------- 5 ###########################
 Clearing Houses: 
   Format Conversion:
     they may provide service to convert paper claim(CMS1500/UB04) to Electronic form (EDI)
@@ -238,7 +238,7 @@ AdendumB CPT/HCPCS Codes
 Taxonomy CMS 
 NPI CMS
 
---------------------------------------------- 6
+--------------------------------------------- 6 ###########################
 Claims & Encounters
 
 COB (Coordination Of Benefits)
@@ -307,7 +307,7 @@ ICD-10-PCS: 7 Digit code alphanumeric
 	6th char - Device
 	7th char - Qualifier
 
---------------------------------------------- 7
+--------------------------------------------- 7 ###########################
 CPT & HCPCS (Outpatient procedures)
 	CPT (Level 1 codes): Current Procedural Terminology
 		Introduced by AMA in 1966
@@ -376,7 +376,7 @@ EDI Transactions
 837 - Claim Submission
 999/997/TA1 - Acknowledgement/Confirmation
 
---------------------------------------------- 8
+--------------------------------------------- 8 ###########################
 Trading Partner Onboarding
 	with whom you trade data using electronic communication
 	Will use various protocols to transmitting data
@@ -426,7 +426,7 @@ for each transaction for payer and provider and/or CH
 CAQH CORE: Governed by CAQH enforced by CMS
  Operating rules for EDI interoperability
 
------------------------------------------------------------------------9
+---------------------------------------------------------------------- 9 & 10 ###########################
 EDI 837 Transactions (5010 is current version)
 					4010 is legacy
 					7030/8020 is future versions
@@ -461,6 +461,13 @@ EDI 837 Transactions (5010 is current version)
 		additional clinical data elements
 
 ####################################837P Claim EDI Structure####################################
+ST - Transaction Set Header
+BHT - Begining of Hierarchial transaction
+	BHT01 - 019 
+	BHT02 - Transaction set purpose  code (00- Original/ 18 - Reissue)
+	BHT03 - Reference Identification number
+	BHT04/05 - Date/Time
+	BHT06 - represents it is for cashclaim -CH/reporting - RP
 Submitter loop 1000A---------------------------
 Receiver loop  1000B ---------------------------
 Billing Provider loop 2000A ---------------------------
@@ -512,7 +519,10 @@ Claim looop 2300 - 2310 ---------------------------
 			DTP Segements - discharge/accident/admission/last worked/....etc
 			AMT Segment- amount paid by patient 
 			REF segments identified by REF01 - Reference Indentification Qualifier
-			HI Segment	- For diagnosis codes(ICD10), 
+			HI Segment	- For diagnosis codes(ICD10-CM)
+				HI - 12 elements
+					HI01 - composite element - Primary/Principal Diagnosis code (ABK:diagCode)
+					HI02-12 - composite element - other diagnosis code (ABF:diagcode)
 			HCP - Claim Pricing/repricing
 			NTE - claim note segment
 	2310A - Referring provider name
@@ -520,13 +530,34 @@ Claim looop 2300 - 2310 ---------------------------
 	2310C - Service Facility Location Name
 	2310D- Supervising Provider name
 	2310E/F - Ambulance Pickup/Dropoff location
-	2320 - Subscriber Information
+	2320 - other Subscriber Information
 
 Service Line Information loop - 2400 ---------------------------------
 	LX*1 - line1 i.e., service1
 	SV1* - service segment (SV1 represents Profressional/NPI1, SV2 represents entity/NPI2 will be 837I)
-	
+		SV1 01 - Composite Element - Medical procedure ID 
+				SV101 - 1 Product/Service ID Qualifier (ER/HC/IV/WK)
+				SV101 - 2 Product/Service ID (Procedure Code)
+				SV101 - 3 Procedure Modifiers (CPT Modifiers/HCPCS Modifiers)
+					4,5,6 Modifiers (situational, used when necessary)
+				SV101 - 7 Description of procedure/service
 
+		SV1 02 - Monetary amount (procedure cost)
+		SV1 03 - units/basis for measurement code
+		SV1 04 - Quantity
+		SV1 05 - Facility code value
+		SV1 06 - Service Type Code
+		SV1 07 (1 to 4) - Composite Element - Diagnosis Code Pointer points the - HI segment in CLM loop
+		
+
+	SV5 segment (Durable Medical Equipment)
+	PWK - Line supplemental Information
+	PWK - Certificate of requirement of DME (durable medical equip)
+	NTE - line note
+	CN1 - contract info
+2410 - Drug Identifier loop
+2402A - Rederering provider name
+2420B - Purchased service provider name
 
 
 Service line 2400 - has lx1, SV1....
@@ -578,6 +609,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
