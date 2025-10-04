@@ -53,6 +53,45 @@ RxPCN - the Processor Control Number further narrows the claim to the specific i
 ID - the member's designated identification number
 RxGrp - the prescription group number denotes which group plan the member ID falls under
 
+
+--------------------------------------------- 3
+Project Management - Agile/Scrum
+Principles
+1. Empirical Process Control (emphasizes on core philosophy of scrum - Transparency/Inspection/Adaption)
+2. Self - Organization (Focuses on today's workers - self organize other than working under command and control)
+3. Collaboration (Awareness/articulation/appropriation - advocates project management as a shared value creation process)
+4. Value-Based Prioritization (Max Buisness value from project starting and throughout project)
+5. Time-Boxing (sprints/Daily standup/sprint Planning meeting/sprint review meetings)
+6. Iterative Development (emphasizes on better management of changes to satisfy customer needs)
+
+Aspects
+1. Orgranization
+2. Buissness Justification
+3. Quality
+4. Change
+5. Risk
+
+Processes (19 Processes in 5 Phases)
+Phase 1: Initiate
+Phase 2: Plan and Estimate
+Phase 3: Implement
+Phase 4: Review and Retrospect
+Phase 5: Release
+
+
+Scrum Ceremonies/meetings
+	Project Vision Meeting - 	project vision statement created
+	User group meeing 	   -	Develop epics and create UserStories
+	Release planning sessions - create release planning schedule
+	Product backlog review meeting -
+	Sprint planning meeting 8hrs for 1month sprint (two parts 1.objective definition 2.Task Estimation(identify tasks and estimate tasks)
+	Sprint review meeting 4hrs for 1month sprint (accepts/rejects completed user stories)
+	Retrospect Sprint Meeting 4hrs for 1month sprint 
+	Retrospect Release Meeting
+	Daily standup - 15 mins(what is done from last standup, what to do before next meeting, any roadblocks)
+	sprint - 1-4weeks(recommended 4weeks, extended to 6weeks for stable requirements)
+
+
 --------------------------------------------- 4
 Claim Lifecycle - End to End Claim Flow
 
@@ -66,13 +105,13 @@ Charge Capture
         - capture quantity and charge for the diagnosis(tests) and treatment(surgery/care)
 Coding
         -       For diagnosis like related tests (ICD10)
-                for treatment like sugeries (CPT/HCPCS)
+                for treatment like sugeries (CPT/HCPCS for NPI1(indvidual/professionals), Revenue Codes for NPI2(entities))
         Provider side
                 HL7.V2 - Lab ordering made by provider is done by HL7.V2
                 Snowmed
                 Loinc
                 Dicom
-        But Payer require only ICD10/CPT-HCPCS codes
+        But Payer require only ICD10/CPT-HCPCS/Rev codes
 
 Claim Creation: 
         Patient Info| 
@@ -97,7 +136,7 @@ Clearing House Processing: Any conversions(paper to EDI), errors, corrections wi
         JMS (Just Make sense -one of the clearing house to convert paper to EDI)
         Availity, Smart Data Solutions, DentalXChange, FinThrive, PNT Data, HFMI
 
-Payer System: Receive Claim in Administrative System(Facets/QNXT/HealthRule Payer)
+Payer System: Receive Claim in Administrative System(Facets/QNXT/HealthRulesPayor-HRP)
                 /Verify Eligibility and benefit level
                 /Apply Pricing Claim Edits
                         Basic Edits and Detailed Edits  based on
@@ -421,23 +460,77 @@ EDI 837 Transactions (5010 is current version)
 		Enhanced provider information
 		additional clinical data elements
 
-837P Claim EDI Structure
-Submitter loop 1000A
-Receiver loop  1000B 
-Billing Provider loop 2000A - 2010A - 2010AA
-Pay to Address loop (Situational) 2000A - 2010A - 2010AB
-Pay to Plan Name loop (Situational) 2000A - 2010A - 2010AC
-Subscriber Loop 2000B -2010B - 2010BA
-	SBR segment
-	Patient segment (Situational if subscriber is patient)
-	NM1 01 - IL
-	DMG segment includes dob, Gender, etc
-Patient loop 2000c - 2010C - 2010CA
-	NM1 01 - QC
+####################################837P Claim EDI Structure####################################
+Submitter loop 1000A---------------------------
+Receiver loop  1000B ---------------------------
+Billing Provider loop 2000A ---------------------------
+	Billing provider- 2010A - 
+		Billing provider details 2010AA 
+		Pay to Address loop (Situational) 2010AB 
+		Pay to Plan Name loop (Situational) 2010AC 
+Subscriber Loop 2000B  ---------------------------
+	SBR segment 2010B
+		SBR01- Payer resp seq no code (P- Primary/S Secondary/T Tertiary)
+		SBR02- indvi relat code (18 self)
+		SBR04/04 - Situational - Plan name/insu type code
+		SBR09- claim filing indicator code 
+				(MA- medicare part A/MB-medicare partB/MC-medicaid/CI-commercial Ins)
+		Patient segment (Situational if subscriber is patient) 
+					used for mentioning dates when subscriber is patient and deceased
+	Subscriber details (name,dmg...etc) 2010BA
+			NM1 01 - IL
+			DMG segment includes dob, Gender, etc	
+	Payer details loop -2010BB (name, dmg...etc)		
+	
 
-Claim looop 2300 - 2310
+Patient loop 2000c - 2010C - 2010CA ---------------------------
+	PAT 01- relationship code
+			1 spouse
+			19- child
+			20- employee
+			39- organ donar....etc
+	NM1 01 (identifier) - QC
+	NM1 02 (Entity qualifier) -1 person
+
+Claim looop 2300 - 2310 ---------------------------
+	CLM Segment 2300
+			CLM01 - claim submit identifier (Claim control number)
+			CLM02 - Monetory amount (total amount of claim)
+			CLM05 - Healthcare Servc Location info - Which is Composite element (clm05-1:clm05-2:clm05-3)
+					clm05-1 - Service code
+					clm05-2 - Facility code qualifier
+					clm05-2 - claim frequency code 
+								1 - fresh/original claim
+								7 - corrected claim
+								8 - replacement for previously submtd claim
+			CLM06 - provider signature yes/no code
+			CLM07 - provider accept assignment code (A/B/C)
+			PWK - Situational and it is required when to mention about paperwork/attachments
+			PWK01- report type code (for allergies/discharge summary/Nursing notes/...etc)
+			PWK02- Transmission code 
+					(electronic/Bymail-BM/EM-Email/FT file trnsfer/AA Available at providersite)
+			DTP Segements - discharge/accident/admission/last worked/....etc
+			AMT Segment- amount paid by patient 
+			REF segments identified by REF01 - Reference Indentification Qualifier
+			HI Segment	- For diagnosis codes(ICD10), 
+			HCP - Claim Pricing/repricing
+			NTE - claim note segment
+	2310A - Referring provider name
+	2310B - Rendering provider name
+	2310C - Service Facility Location Name
+	2310D- Supervising Provider name
+	2310E/F - Ambulance Pickup/Dropoff location
+	2320 - Subscriber Information
+
+Service Line Information loop - 2400 ---------------------------------
+	LX*1 - line1 i.e., service1
+	SV1* - service segment (SV1 represents Profressional/NPI1, SV2 represents entity/NPI2 will be 837I)
+	
+
+
 
 Service line 2400 - has lx1, SV1....
+lx2, sv2 for NPI2 (entities)
 
 
 ---------------------------------------------
@@ -485,6 +578,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
