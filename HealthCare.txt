@@ -576,8 +576,14 @@ Service Line Information loop - 2400 ---------------------------------
 2420B - Purchased service provider name
 
 
-Service line 2400 - has lx1, SV1....
-lx2, sv2 for NPI2 (entities)
+---------------------------------------------------------------------- 12 ######################
+Common Error - 837 claim error codes
+1. Validation checks 
+2. Context Checks
+3. Buisness rules
+4. Payer specific testing
+
+	
 
 
 ---------------------------------------------
@@ -625,6 +631,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
