@@ -426,7 +426,7 @@ for each transaction for payer and provider and/or CH
 CAQH CORE: Governed by CAQH enforced by CMS
  Operating rules for EDI interoperability
 
----------------------------------------------------------------------- 9 & 10 ###########################
+---------------------------------------------------------------------- 9 & 10 & 11 ######################
 EDI 837 Transactions (5010 is current version)
 					4010 is legacy
 					7030/8020 is future versions
@@ -609,6 +609,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
