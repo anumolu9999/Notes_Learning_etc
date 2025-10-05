@@ -428,8 +428,8 @@ CAQH CORE: Governed by CAQH enforced by CMS
 
 ---------------------------------------------------------------------- 9 & 10 & 11 ######################
 EDI 837 Transactions (5010 is current version)
-					4010 is legacy
-					7030/8020 is future versions
+					  4010 is legacy
+					  7030/8020 is future versions
 					
 	ISA - Interchange Control Header
 		GS - Functional Group Header
@@ -460,7 +460,7 @@ EDI 837 Transactions (5010 is current version)
 		Enhanced provider information
 		additional clinical data elements
 
-####################################837P Claim EDI Structure####################################
+#################################### 837P Claim EDI Structure ####################################
 ST - Transaction Set Header
 BHT - Begining of Hierarchial transaction
 	BHT01 - 019 
@@ -633,6 +633,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
