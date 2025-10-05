@@ -102,7 +102,7 @@ Phase 5: Release
 
 Scrum Ceremonies/meetings
 	Project Vision Meeting - 	project vision statement created
-	User group meeing 	   -	Develop epics and create UserStories
+	User group meeting 	   -	Develop epics and create UserStories
 	Release planning sessions - create release planning schedule
 	Product backlog review meeting -
 	Sprint planning meeting 8hrs for 1month sprint (two parts 1.objective definition 2.Task Estimation(identify tasks and estimate tasks)
@@ -110,4 +110,5 @@ Scrum Ceremonies/meetings
 	Retrospect Sprint Meeting 4hrs for 1month sprint 
 	Retrospect Release Meeting
 	Daily standup - 15 mins(what is done from last standup, what to do before next meeting, any roadblocks)
+
 	sprint - 1-4weeks(recommended 4weeks, extended to 6weeks for stable requirements)
