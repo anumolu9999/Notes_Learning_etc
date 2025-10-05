@@ -112,3 +112,9 @@ Scrum Ceremonies/meetings
 	Daily standup - 15 mins(what is done from last standup, what to do before next meeting, any roadblocks)
 
 	sprint - 1-4weeks(recommended 4weeks, extended to 6weeks for stable requirements)
+
+DOR - Definition of Ready
+	In agile methodologies, the Definition of Ready (DoR) sets the criteria for when a backlog item can be started, ensuring it has enough information and clarity for the team to work on it effectively.
+
+DOD - Definition of Done
+	 In contrast, the Definition of Done (DoD) is the checklist that determines when a completed work item meets quality and completeness standards and is ready for delivery. 
