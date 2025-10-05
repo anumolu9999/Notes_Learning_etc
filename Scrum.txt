@@ -110,7 +110,6 @@ Scrum Ceremonies/meetings
 	Retrospect Sprint Meeting 4hrs for 1month sprint 
 	Retrospect Release Meeting
 	Daily standup - 15 mins(what is done from last standup, what to do before next meeting, any roadblocks)
-
 	sprint - 1-4weeks(recommended 4weeks, extended to 6weeks for stable requirements)
 
 DOR - Definition of Ready
@@ -118,3 +117,4 @@ DOR - Definition of Ready
 
 DOD - Definition of Done
 	 In contrast, the Definition of Done (DoD) is the checklist that determines when a completed work item meets quality and completeness standards and is ready for delivery. 
+
