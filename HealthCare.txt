@@ -607,6 +607,8 @@ Common Error - 837 claim error codes
 ---------------------------------------------
 Key Acronyms:
 
+ABAC - Activity Based Access Control
+RBAC - Role Based Access Control
 CAQH - Council for Affordable Quality Healthcare
 Taxonomy - Specialization code
 DME - Durable Medical Equipment (equipment specific codes)
@@ -631,6 +633,7 @@ EDI - Electronic Data Interchange (X12 format)
 PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
+
 
 
 
