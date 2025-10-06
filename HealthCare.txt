@@ -78,7 +78,6 @@ Phase 3: Implement
 Phase 4: Review and Retrospect
 Phase 5: Release
 
-
 Scrum Ceremonies/meetings
 	Project Vision Meeting - 	project vision statement created
 	User group meeing 	   -	Develop epics and create UserStories
@@ -469,7 +468,9 @@ BHT - Begining of Hierarchial transaction
 	BHT04/05 - Date/Time
 	BHT06 - represents it is for cashclaim -CH/reporting - RP
 Submitter loop 1000A---------------------------
+	NM101 - 41
 Receiver loop  1000B ---------------------------
+	NM101 - 40
 Billing Provider loop 2000A ---------------------------
 	Billing provider- 2010A - 
 			HL - hierarchy level billing provider
@@ -576,6 +577,23 @@ Service Line Information loop - 2400 ---------------------------------
 2420B - Purchased service provider name
 
 
+identifier/Qualifier codes::::::::
+41 = Claim Creator (Hardcoded to EI Assistant)
+40 = Claim Receiver
+85 = Billing Provider
+82 = Rendering Provider
+DN = Referring Provider
+IC = Information Contact
+77 = Service Location
+472 = Date of Service
+SY = Social Security Number
+EI = Tax ID (EIN)
+XX = NPI
+Y4 = Claim Casualty Number
+HC = Standard CPT Code
+ABK = Principal Diagnosis
+ABF = Diagnosis
+
 ---------------------------------------------------------------------- 12 ######################
 Common Error - 837 claim error codes
 1. Validation checks 
@@ -586,25 +604,150 @@ Common Error - 837 claim error codes
 	
 
 
----------------------------------------------
+----------------------------------------------------------------------- 13 ######################
+835 - Remittance Transactions
+	ISA Segment
+		ISA 06 - Sender ID - is Payer
+		ISA 08 - Receiver ID - is CH/Provider
+		ISA 09/10 - Date/Time
 
----------------------------------------------
+	BPR segment - Financial Information
+		BPR01 - Payment/Remittance Advice Indicator
+				A	Off Invoice (Deduction from Original Invoice)
+				B	Debit/Credit Advice No Remittance Detail
+				C	Payment Accompanies Remittance Advice
+				D	Make Payment Only
+				E	Debit/Credit Advice with Remittance Detail
+				F	Plan and Submit Suggested Purchase Order(s)
+				G	Plan Order(s) and Ship Product
+				H	Notification Only
+				I	Remittance Information Only
+				J	Payment Requested (Adjustment to Account)
+				K	Reimbursement to Follow
+				L	Apply on Account
+				M	Memo/Additional Remittance Detail
+				N	Check Issuance Notice
+				O	Deduct from Next Remittance
+				P	Prenotification of Future Transfers
+				Q	Credit Due, Payment Being Issued
+				R	Recurring Debit Authorization
+				S	Single Debit Authorization
+				T	Adjustment Requested
+				U	Split Payment and Remittance
+				X	Handling Party's Option to Split Payment and Remittance
+		BPR02 - Totay Payment issued
+		BPR03 - Credit/Debit flag (A actual credit,C credit, D Debit,E Estimated Credit)
+		BPR04 - Payment method
+					ACH(Automated Clearing House ),CCC(credit),CAS(cash),DEB(debit),CHK(check)..etc
+		BPR05 - Payment Format code
+					BPT - Bill Payment
+					POS - point of sale
+	TRN Segment
+		TRN - Trace number 
+	DTM Segment
+		DTM -  Remittance date
+	N1 Segment 
+		N1 01 - PR (Payer Info)
+		N1 01 - PE (payee info)
+	CLP Segment - Claim Payment Information
+		CLP01 - Claim Control Number (This is same as 837 CLM01 element)
+		CLP02 - Claim Status (1 indicates processed for remittance advice)
+		CLP03 - Billed Amount
+		CLP04 - Allowed Amount
+		CLP05 - Patient Responsibility (If any)
+		CLP06 - Payer Plan Identifier
+				MC--Medicaid
+				MA Medicare Part A
+				MB Medicare Part B
+				PS - Point of service
+				HM - HMO
 
----------------------------------------------
+	CAS Segments - Claim Adjustments 
+		CAS 01 element
+			CO*45 - Contractual Obligation
+			PR*1 - Deductible
+			PR*2 - Co Insurance
+			PR*3 -  Co Payment
+			PI - payer Initiated
+			OA - Other Adjustments
+			CR - Correction and reversal
+		CAS 02 element are the adjustment code indicator
+			45/1/2/3/...
+	SVC - Service Payment Information
+	PLB - Provider Adjustment (situational)
+		PLB03 - Provider adjustment reason codes (Composite Element)
+				WO - overpayment recovery amount
+				L6 - Interest amount
 
----------------------------------------------
 
----------------------------------------------
+835 Reconcillation Process
+	Match 835 to 837
+	Post Payments - update patient account about the payment
+	Identify Over/Under payments - flag payment for follow up
+	Generate patient statements - for patient responsible balance
+	Adjustments/Denials - Process CO, Denials or corrections
+		
+			
+----------------------------------------------------------------------- 14 ######################
+270/271 Transaction
 
----------------------------------------------
+270    Provider  (sender) ---> CH/Payer    (reciever)
+271    CH/Payer  (sender) ---> Provider   (reciever)
+												----FAIL---> Failed Interchange ---TA1 Response---> CH/Payer
+270 request from Provider ----> EDI Validation ----PASS---> Accepted Interchange ---> Transaction ----Failed --->999 Rejected--->Provider
+																								---Passed---->VerificationSystem ----999 Accepted--->provider 
+																																			(271 returned with info)
 
----------------------------------------------
 
----------------------------------------------
+270 Request loops********************
+ISA
+GS
+ST
+BHT begining of hierarchial transaction
+HL - provider hierarchy level
+NM1*IP
+HL - payer hierarchy level
+NM1*PR
+HL - Patient Hierarchy level
+NM1*IL
+DMG
+DTP
+EQ*  ----EQ01 will be 30 with respond with below coverages active eligibilities
+						Health benefit plan coverage
+							a. Medical Care
+							b. Dental Care
+							c. Hospital
+							d. Pharmacy (potential vendor)
+							e. Professional Office Visit
+							f. Mental Health
+	to know only about
+	EQ*35 - Dental Coverage or not
+	EQ*88 - Pharma 
+	EQ*1 - Medical
+	EQ*2 - Surgery
+	EQ*9 - Virtual Visit
+	EQ*MH - Mental Health
+	EQ*PT - Physical Theraphy
 
----------------------------------------------
+271 Request loops*********************
+EB*1**30**GOLDPLAN~
 
----------------------------------------------
+
+											   
+
+----------------------------------------------------------------------- 15 ######################
+
+----------------------------------------------------------------------- 16 ######################
+
+----------------------------------------------------------------------- 17 ######################
+
+----------------------------------------------------------------------- 18 ######################
+
+----------------------------------------------------------------------- 19 ######################
+
+----------------------------------------------------------------------- 20 ######################
+
+----------------------------------------------------------------------- 21 ######################
 Key Acronyms:
 
 ABAC - Activity Based Access Control
@@ -634,6 +777,13 @@ PMPM - Per Member Per Month
 APCs - Ambulatory Payment Classifications
 ---------------------------------------------
 
+Key URLs
+https://www.stedi.com/edi/x12/segment/BPR#BPR-02
+SD@aditya9999
+
+https://x12.org/products/transaction-sets
+
+https://datainsight.health/clinsight/ui/metricslist/adj_payment
 
 
 
