@@ -729,10 +729,35 @@ EQ*  ----EQ01 will be 30 with respond with below coverages active eligibilities
 	EQ*MH - Mental Health
 	EQ*PT - Physical Theraphy
 
+	to submit multiple checks will be submitted with multi element with ^ symbol
+	EQ*30^35^1^2........
+
 271 Request loops*********************
-EB*1**30**GOLDPLAN~
+EB -  Eligibility and Benefit Information
+EB*1**1^33^35^4^86^88^98^AL^MH^UC~
+	EB01 - Eligibility or Benefit Information Code = 1 (Active Coverage)
+	EB02 - Coverage Level Code = * not used
+	EB03 - Eligibility Benefits information
+				Service Type Code = 1 (Medical Care)
+				Service Type Code = 33 (Chiropractic)
+				Service Type Code = 35 (Dental Care)
+				Service Type Code = 47 (Hospital)
+				Service Type Code = 86 (Emergency Services)
+.//.				Service Type Code = 88 (Pharmacy)
+				Service Type Code = 98 (Professional (Physician) Visit – Office)
+				Service Type Code = AL (Vision (Optometry))
+				Service Type Code = MH (Mental Health)
+				Service Type Code = UC (Urgent Care)
+	EB04 - Plan type
+	EB05 - Plan Name
 
+EB 12 - Y (in-network)
+EB 12 - N (out of network)
 
+270/271 can also check for eligible for Place Of Service Codes
+	If member is eligible to get treated at that place, 271 gives response as eligible
+270/271 can also check for eligible procedures
+	if member is eligible to get the procedure, 271 gives response as eligible
 											   
 
 ----------------------------------------------------------------------- 15 ######################
@@ -784,6 +809,7 @@ SD@aditya9999
 https://x12.org/products/transaction-sets
 
 https://datainsight.health/clinsight/ui/metricslist/adj_payment
+
 
 
 
