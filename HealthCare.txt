@@ -743,7 +743,7 @@ EB*1**1^33^35^4^86^88^98^AL^MH^UC~
 				Service Type Code = 35 (Dental Care)
 				Service Type Code = 47 (Hospital)
 				Service Type Code = 86 (Emergency Services)
-.//.				Service Type Code = 88 (Pharmacy)
+				Service Type Code = 88 (Pharmacy)
 				Service Type Code = 98 (Professional (Physician) Visit – Office)
 				Service Type Code = AL (Vision (Optometry))
 				Service Type Code = MH (Mental Health)
@@ -761,6 +761,24 @@ EB 12 - N (out of network)
 											   
 
 ----------------------------------------------------------------------- 15 ######################
+834 - Member Enrollment and management for Employers(companies) to Payers
+	ISA
+	GS
+	ST
+		------------------ Header info (ST/BGN)
+-----------------------Sponsor info (N1) Employer details
+---------------Member Details (INS/REF/DTP) 
+				Employee and dependent info, SSN, Relationship codes and dates, 
+				Employment details and hire dates
+-----------------Coverage Info (HD/COB)
+					plan details and coverage levels, effective dates, premium info
+		
+	SE
+	GE
+	IEA
+
+TR3(Technical Report Type3) and Implementation guide are same
+
 
 ----------------------------------------------------------------------- 16 ######################
 
@@ -775,7 +793,7 @@ EB 12 - N (out of network)
 ----------------------------------------------------------------------- 21 ######################
 Key Acronyms:
 
-ABAC - Activity Based Access Control
+ABAC - Attribute/Activity Based Access Control
 RBAC - Role Based Access Control
 CAQH - Council for Affordable Quality Healthcare
 Taxonomy - Specialization code
@@ -809,6 +827,7 @@ SD@aditya9999
 https://x12.org/products/transaction-sets
 
 https://datainsight.health/clinsight/ui/metricslist/adj_payment
+
 
 
 
