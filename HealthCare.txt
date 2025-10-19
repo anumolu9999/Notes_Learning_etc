@@ -126,9 +126,9 @@ Claim Creation:
                 - Qty Charge
 
 Claim Submission:
-        CMS1500 -HCFA(paperclaims) - EDI 837P  for professional claim -Clinical (ICD10+CPT/HCPCS)
+        CMS1500 -HCFA(paperclaims) - EDI 837P  for professional claim -Clinical (ICD10CM+CPT/HCPCS)
                                         837P asks for any of these Billing provider/Rendering provider/attending provider
-        UB04 -CMS1450(paperclaims) - EDI 837I for Institutional/facility claim - Institutional (ICD10+Revenue Codes)
+        UB04 -CMS1450(paperclaims) - EDI 837I for Institutional/facility claim - Institutional (ICD10CM+Revenue Codes-ICD10CPS)
         ADA claim form             - EDI 837D for Dental claim
 
 Clearing House Processing: Any conversions(paper to EDI), errors, corrections will be reviewed  
@@ -428,7 +428,7 @@ CAQH CORE: Governed by CAQH enforced by CMS
 ---------------------------------------------------------------------- 9 & 10 & 11 ######################
 EDI 837 Transactions (5010 is current version)
 					  4010 is legacy
-					  7030/8020 is future versions
+					  7030/8060 is future versions
 					
 	ISA - Interchange Control Header
 		GS - Functional Group Header
@@ -827,6 +827,7 @@ SD@aditya9999
 https://x12.org/products/transaction-sets
 
 https://datainsight.health/clinsight/ui/metricslist/adj_payment
+
 
 
 
