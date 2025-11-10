@@ -1,0 +1,22 @@
+Dependencies (Maven):
+1. selenium-java
+2. webdrivermanager - This is for browser driver dependencies
+
+
+
+Selenium Locators (Basic)
+-------------------------
+driver.FindElement(By.id(""))
+driver.FindElement(By.Name(""))
+driver.FindElement(By.linkText(""))
+driver.FindElement(By.PartialLinkText(""))
+driver.FindElement(By.className(""))
+driver.FindElement(By.tagName(""))
+
+CSS Selectors [driver.FindElement(By.cssSelector(<below combos>))]
+-----------------
+Tag and ID        Tag#id or #id
+Tag and class     Tag.class or .class
+Tag and attribute  Tag[att=attValue] or [att=attValue]
+Tag, class and attribute Tag.class[attr=AttValue]
+            
