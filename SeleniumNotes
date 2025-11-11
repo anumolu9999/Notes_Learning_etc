@@ -53,15 +53,49 @@ Options to Capture xPath:
 xPath Axes:
 -------------------------------------
 ***********Types************
-Self  
-Parent
-Child
-Ancestor
-Descendant
-Following
-Following-sibling
-Preceding
-Preceding-sibling
+Self  -  locating element
+Parent - parent node of self
+Child - child nodes of self
+Ancestor - all parent/grand parent nodes of self
+Descendant - all child/grand child nodes of self
+Following - all nodes next to the self
+Following-sibling - all next sibling nodes at the self hierarchy level
+Preceding - all nodes previous to selft
+Preceding-sibling - all previous sibling nodes at the self hierarchy level
+
+facebook Signup page----
+From signup button point to the first_name (parent)
+//button[@type="submit"]/parent::*/parent::*/descendant::div[contains(@data-onfocus,"first_name")]
+
+From mobile number/email point to the 'Password' field (following)
+//input[@name="reg_email__"]/following::div[contains(@data-onfocus,"password")]
+//input[@name="reg_email__"]/following::input[2]
+
+from password field point to mobile/email textbox
+//input[starts-with(@id,"password")]/preceding::input[2]
+
+Locate surname from Female radio button
+//label[text()="Female"]/ancestor::div[@id="reg_form_box"]/child::div[1]/div/div[2]
+//input[@id="sex" and @value="1"]/ancestor::div[@id="reg_form_box"]/div[1]/div/div[2]
+//input[@id="sex" and @value="1"]/ancestor::div[2]/div[1]/div/div[2] 
+//input[@id="sex" and @value="1"]/ancestor::div[2]//input[@name="lastname"]
+
+
+identify the google search textbox from google search button in Google search home page
+//input[@value="Google Search"]/ancestor::*/child::form//textarea
+
+directly google textbox
+//form/descendant::textarea
+//form//textarea
+
+amazon.in------Locate 'Today's Deals' from Searchbox
+//input[@id="twotabsearchtextbox"]/following::a[text()="Today's Deals"]
+
+Locate Signin from Searchbox
+//input[@id="twotabsearchtextbox"]/following::span[text()="Hello, sign in"]
+
+Locate Mobiles from menu bar
+//div[@id="nav-main"]/descendant::a[text()="Mobiles"]
 
 
 
