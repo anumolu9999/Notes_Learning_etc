@@ -19,4 +19,50 @@ Tag and ID        Tag#id or #id
 Tag and class     Tag.class or .class
 Tag and attribute  Tag[att=attValue] or [att=attValue]
 Tag, class and attribute Tag.class[attr=AttValue]
+
+
+xPath
+---------------------------------------------
+Absolute XPath -> Fullpath -> starts with / -> use attributes and values
+Relative XPath -> shortpath -> starts with // -> use tags and nodes
+Relative Xpath 
+Syntax: //tagName[@attribute="value"]
+Example" //input[@name="txtUsername"]
+            //*[@name="username"]
+            * - searches in all tags and locate the element where the attribute matches
+
+xPath Options:
+-----------------
+ or --->             //tag[@att1="value" or @att2="value"]
+ and --->            //tag[@att1="value" and @att2="value"]
+ contains() --->     //tag[contains(@att,"partOfValue")]
+ starts-with() -->   //tag[starts-with(@att,"startOfValue")]
+ text() -->          //tag[text()="value"]  ##text between open/close tags
+                        example: <a id="nav-top">linkTextForTest</a>
+                                    //a[text()="linkTextForTest"]
+ chained xpath -->   //tag[@att1="Value"]//input[4]; ## 4 denotes index of input box
+
+
+Options to Capture xPath:
+-------------------------------------------
+1. Right Click on element and Inspect -> Right click (Copy -> Copy as Xpath)
+2. Chropath Extension
+3. SelectorsHub
+
+
+xPath Axes:
+-------------------------------------
+***********Types************
+Self  
+Parent
+Child
+Ancestor
+Descendant
+Following
+Following-sibling
+Preceding
+Preceding-sibling
+
+
+
             
